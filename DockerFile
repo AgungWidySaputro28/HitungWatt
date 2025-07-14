@@ -1,0 +1,8 @@
+# Gunakan image resmi PHP dengan server Apache
+FROM php:8.2-apache
+
+# Instal ekstensi mysqli yang dibutuhkan untuk koneksi ke database
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
+# Salin semua file dari folder proyek saat ini ke folder web server di dalam kontainer
+COPY . /var/www/html/
